@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bazooka Friday</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-sm border-b border-white/10 transition-all duration-300 ease-out" data-aos="fade-down" data-aos-duration="800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="Baz.jpg" alt="Bazooka Friday Logo" class="w-10 h-10 rounded-full object-cover shadow-glow group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
+                    <span class="text-xl font-bold tracking-wider group-hover:text-blue-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-400 after:transition-all after:duration-300 group-hover:after:w-full">Bazooka Friday</span>
+                </a>
+                <div class="flex items-center space-x-8">
+                    <a href="shipping.html" class="text-gray-300 hover:text-white transition-colors duration-300 relative overflow-hidden group">
+                        <span class="relative z-10">Shipping</span>
+                        <span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors duration-300 relative overflow-hidden group">
+                        <span class="relative z-10">About</span>
+                        <span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section relative min-h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-cover bg-center z-0 hero-image" style="background-image: url('A.jpg');"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        <h1 class="text-4xl md:text-7xl font-bold z-20 px-4 text-center relative">Bazooka<br/>Friday</h1>
+        <a href="#products" class="absolute bottom-10 z-20 animate-bounce">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="relative py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h2 class="text-5xl font-bold mb-8 opacity-0 animate-fade-in text-white">Bazooka Friday</h2>
+            <p class="text-xl leading-relaxed mb-8 opacity-0 animate-fade-in delay-200 text-gray-300">
+                A local Filipino brand that is often underrated, drawing inspiration from skate fashion and the vibrant community around it.
+                Our designs reflect the raw energy and authentic spirit of street culture, bringing together skateboarding lifestyle and
+                contemporary fashion in unique ways.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16">
+        <div class="container mx-auto px-4">
+            <!-- Top shirt (Shirt 10) -->
+            <div class="max-w-sm mx-auto mb-24 -mt-12">
+                <div class="product-card transform hover:scale-105 transition-transform shadow-2xl" data-aos="fade-up">
+                    <img src="Shirt10.jpg" alt="Shirt 10" class="w-full">
+                    <div class="product-overlay"></div>
+                </div>
+            </div>
+            
+            <!-- Bottom shirts (Shirt 9 and 11) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mt-8">
+                <div class="product-card transform hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+                    <img src="Shirt9.jpg" alt="Shirt 9" class="w-full">
+                    <div class="product-overlay"></div>
+                </div>
+                <div class="product-card transform hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Shirt11.jpg" alt="Shirt 11" class="w-full">
+                    <div class="product-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Carousel Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto max-w-6xl px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Left side: Product Carousel -->
+                <div class="relative">
+                    <div class="overflow-hidden rounded-lg">
+                        <div id="carouselTrack" class="flex transition-transform duration-300 ease-out">
+                            <div class="w-full flex-shrink-0 relative group">
+                                <img src="Shirt1.jpg" alt="Shirt 1" class="w-full h-[350px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" />
+                            </div>
+                            <div class="w-full flex-shrink-0 relative group">
+                                <img src="Shirt2.jpg" alt="Shirt 2" class="w-full h-[350px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" />
+                            </div>
+                            <div class="w-full flex-shrink-0 relative group">
+                                <img src="Shirt3.jpg" alt="Shirt 3" class="w-full h-[350px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" />
+                            </div>
+                            <div class="w-full flex-shrink-0 relative group">
+                                <img src="Shirt4.jpg" alt="Shirt 4" class="w-full h-[350px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" />
+                            </div>
+                            <div class="w-full flex-shrink-0 relative group">
+                                <img src="Shirt5.jpg" alt="Shirt 5" class="w-full h-[350px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" />
+                            </div>
+                            <div class="w-full flex-shrink-0 relative group">
+                                <img src="shirt6.jpg" alt="Shirt 6" class="w-full h-[350px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" />
+                            </div>
+                            <div class="w-full flex-shrink-0 relative group">
+                                <img src="Shirt7.jpg" alt="Shirt 7" class="w-full h-[350px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Navigation -->
+                    <button onclick="prevSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 transition-all group">
+                        <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 transition-all group">
+                        <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Carousel Indicators -->
+                    <div class="flex justify-center mt-3 space-x-1.5">
+                        <div class="flex space-x-1.5">
+                            <button onclick="goToSlide(0)" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-white transition-all carousel-indicator"></button>
+                            <button onclick="goToSlide(1)" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-white transition-all carousel-indicator"></button>
+                            <button onclick="goToSlide(2)" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-white transition-all carousel-indicator"></button>
+                            <button onclick="goToSlide(3)" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-white transition-all carousel-indicator"></button>
+                            <button onclick="goToSlide(4)" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-white transition-all carousel-indicator"></button>
+                            <button onclick="goToSlide(5)" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-white transition-all carousel-indicator"></button>
+                            <button onclick="goToSlide(6)" class="w-2 h-2 rounded-full bg-gray-300 hover:bg-white transition-all carousel-indicator"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side: Size Chart -->
+                <section class="max-w-md mx-auto md:mx-0 self-start">
+                    <div class="bg-gray-900 rounded-lg shadow-md p-6 mt-0 size-chart-container">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-2xl font-bold">Size Chart</h3>
+                            <div class="flex items-center">
+                                <span class="mr-2 text-sm">CM</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="unitToggle">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="ml-2 text-sm">Inches</span>
+                            </div>
+                        </div>
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-700">
+                                    <th class="py-2 text-left">Size</th>
+                                    <th class="py-2 text-left">Width</th>
+                                    <th class="py-2 text-left">Length</th>
+                                    <th class="py-2 text-left">Fit</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700">
+                                <tr class="size-row group" data-size="S" style="--row-index: 1">
+                                    <td class="py-3 font-medium">S</td>
+                                    <td class="py-3 width-cell" data-cm="48">48</td>
+                                    <td class="py-3 length-cell" data-cm="69">69</td>
+                                    <td class="py-3 text-sm text-gray-400 group-hover:text-blue-400">Slim Fit</td>
+                                </tr>
+                                <tr class="size-row group" data-size="M" style="--row-index: 2">
+                                    <td class="py-3 font-medium">M</td>
+                                    <td class="py-3 width-cell" data-cm="51">51</td>
+                                    <td class="py-3 length-cell" data-cm="71">71</td>
+                                    <td class="py-3 text-sm text-gray-400 group-hover:text-blue-400">Regular Fit</td>
+                                </tr>
+                                <tr class="size-row group" data-size="L" style="--row-index: 3">
+                                    <td class="py-3 font-medium">L</td>
+                                    <td class="py-3 width-cell" data-cm="54">54</td>
+                                    <td class="py-3 length-cell" data-cm="74">74</td>
+                                    <td class="py-3 text-sm text-gray-400 group-hover:text-blue-400">Regular Fit</td>
+                                </tr>
+                                <tr class="size-row group" data-size="XL" style="--row-index: 4">
+                                    <td class="py-3 font-medium">XL</td>
+                                    <td class="py-3 width-cell" data-cm="57">57</td>
+                                    <td class="py-3 length-cell" data-cm="76">76</td>
+                                    <td class="py-3 text-sm text-gray-400 group-hover:text-blue-400">Relaxed Fit</td>
+                                </tr>
+                                <tr class="size-row group" data-size="XXL" style="--row-index: 5">
+                                    <td class="py-3 font-medium">XXL</td>
+                                    <td class="py-3 width-cell" data-cm="60">60</td>
+                                    <td class="py-3 length-cell" data-cm="78">78</td>
+                                    <td class="py-3 text-sm text-gray-400 group-hover:text-blue-400">Relaxed Fit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-4 text-sm text-gray-400 animate-fade-in">
+                            Click on a size to highlight measurements
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <img src="Baz.jpg" alt="Bazooka Friday Logo" class="w-12 h-12 rounded-full object-cover footer-logo shadow-glow" />
+                    <div>
+                        <p class="text-sm text-gray-400">&copy; 2025 Bazooka Friday.</p>
+                        <p class="text-xs text-gray-500">All rights reserved. ™</p>
+                    </div>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.facebook.com/profile.php?id=61575080100979" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                        <span class="sr-only">Facebook</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors duration-300">
+                        <span class="sr-only">TikTok</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50">
+        <div class="relative max-w-4xl mx-auto p-4">
+            <button onclick="closeModal()" class="absolute top-1 right-1 bg-white bg-opacity-20 backdrop-blur-sm p-1 rounded-lg hover:bg-opacity-30 hover:-translate-y-0.5 hover:rotate-3 hover:scale-110 transition-all duration-300 ease-out group border border-white border-opacity-40 shadow-lg hover:shadow-white/25">
+                <svg class="w-3 h-3 text-white group-hover:rotate-180 group-hover:scale-125 transition-all duration-300 ease-out motion-safe:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="space-y-4">
+                <img id="modalImage" src="" alt="Modal Image" class="max-h-[80vh] mx-auto rounded-lg shadow-2xl" />
+                <div class="text-center transform hover:translate-y-[-2px] transition-all duration-300 ease-out">
+                    <h3 class="text-white font-bold text-lg tracking-wider font-['Montserrat'] group-hover:text-blue-400 transition-colors">BAZFRI Classic</h3>
+                    <p class="text-gray-400 text-xs mt-1 font-light tracking-widest uppercase">Price <span class="text-blue-400 font-medium ml-1">PHP 650</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
